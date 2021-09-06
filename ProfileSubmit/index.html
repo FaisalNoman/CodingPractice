@@ -1,8 +1,48 @@
 <html>
 <head>
 <title>ProfileApp Index</title>
+<script language="javascript" type="text/javascript">
+	function submit()
+	{
+		var loginId = document.getElementById("txt1").value;
+		debugger;
+		var message = "";
+		for(i=0;i<10;i=i+2)
+		{
+			message = message + loginId + " ";
+		}
+		
+		alert(message);
+		
+		if(1=2)
+		{
+			alert("same values");
+		}
+		else
+		{
+			alert("same values");
+		}
+	}
+</script>
 </head>
 <body>
 	<h1>This is Profile App</h1>
+	
+	<table>
+	<tr>
+		<td>Login</td>
+		<td><input id="txt1" type="textbox" Value="write your email"></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input id="txtpwd" type="textbox"></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="Submit" onclick="submit()">
+			</td>
+	</tr>
+	
+	</table>
 </body>
 </html>

@@ -2,18 +2,34 @@
 <head>
 <title>ProfileApp Index</title>
 <script language="javascript" type="text/javascript">
+	var a = "Faisal<br/>";	
+	
+	document.write(a);
+
+	a = "Jia</a>";
+	
+	document.write(a);
+	
+	var num1 =1;
+	var num2 =1;
+	var num3 = num1 + num2;
+	document.write(num3);
 	function submit()
 	{
+		
+		
+		
 		var loginId = document.getElementById("txt1").value;
 		debugger;
 		var message = "";
 		for(i=0;i<10;i=i+2)
 		{
 			message = message + loginId + " ";
+			document.write(message + "<br/>");
 		}
 		
 		alert(message);
-		
+		/*
 		if(1=2)
 		{
 			alert("same values");
@@ -22,6 +38,7 @@
 		{
 			alert("same values");
 		}
+		*/
 	}
 </script>
 </head>

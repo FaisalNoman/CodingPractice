@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>ProfileApp Index</title>
+<script language="javascript" type="text/javascript">
+    function calculate() {
+        var n1 = document.getElementById("num1").value;
+        var n2 = document.getElementById("num2").value;
+        var op = document.getElementById("operator").value;
+
+        n1 = parseInt(n1);
+        n2 = parseInt(n2);
+        var result = 0;
+
+        if (op == '+')
+            result = n1 + n2;
+        else if(op == '-')
+            result = n1 - n2;
+        else if (op == '*')
+            result = n1 * n2;
+        else if (op == '/')
+            result = n1 / n2;
+        
+        //Todo : change above if else condition to switch case
+
+        document.getElementById("result").value = result;
+
+        //document.write(n1 + op + n2);
+    }
+    //ProperCase : CarMirror 
+    //CamelCase : carMirror
+</script>
+</head>
+<body>
+	<h1>Basic Calculaor</h1>
+    <div>
+        <table>
+            <tr>
+                <td>Num 1</td>
+                <td>Operation</td>
+                <td>Num 2</td>
+            </tr>
+            <tr>                
+                <td><input id="num1" type="textbox"></td>
+                <td><input id="operator" type="textbox"></td>
+                <td><input id="num2" type="textbox"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="button" value="Calculate" onclick="calculate()">
+                </td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td colspan="2">
+                    <input id="result" type="textbox">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

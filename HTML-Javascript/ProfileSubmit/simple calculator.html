@@ -1,109 +1,92 @@
 <html>
-	//html
-	//wajeeha
+//html
+//wajeeha
 
 <head>
-<title>simple calculator</title>
+	<title>simple calculator</title>
 
-<style>
-	table {
-		border: 1px solid black;
-		padding:1px;
-		border-spacing:5px;
-		text-align: center;
-		background-color: #f2f2f2;
-	
-	}
-	table, td{
-		border-bottom: 1px solid #ddd;
-		border-left: 1px solid #ddd;
-	}
+	<style>
+		table {
+			border: 1px solid black;
+			padding: 1px;
+			border-spacing: 5px;
+			text-align: center;
+			background-color: #f2f2f2;
 
+		}
 
-</style>
+		table,
+		td {
+			border-bottom: 1px solid #ddd;
+			border-left: 1px solid #ddd;
+		}
+	</style>
 
-<script language="javascript" type="text/javascript">
-		
-	var num = "";
-	var ope = "";
-	var num2 = "";
+	<script language="javascript" type="text/javascript">
 
-	function asignnumber(val) {
+		var num = "";
+		var ope = "";
+		var num2 = "";
 
-	if(val == "c"){
-		document.getElementById("txtNumbers").value = "";
-		return;
-	}
+		function asignnumber(val) {
 
-	//console.log(val);
-	if (ope == ""){
-
-		num = num + val;
-		document.getElementById("txtNumbers").value = num;
-	} 
-	else{
-		num2 = num2 + val;
-		document.getElementById("txtNumbers").value = num2;
-	}
-	}
-	
-	function calculate(op){
-	switch(op){
-		case "+":
-			document.getElementById("txtNumbers").value = "";
-			ope = '+';
-			break;
-		case "-":
-			console.log(op);
-			document.getElementById("txtNumbers").value = "";
-			ope = '-';
-			break;
-		case "*":
-			console.log(op);
-			document.getElementById("txtNumbers").value = "";
-			ope = '*';
-			break;
-
-		case "/":
-			console.log(op);
-			document.getElementById("txtNumbers").value = "";
-			ope = '/';
-			break;
-		case "=":
-			switch(ope){
-			case "+":
-			console.log(op);
-			document.getElementById("txtNumbers").value = parseInt(num) + parseInt(num2);
-			ope = '=';
-			break;
-
-			case "-":
-			console.log(op);
-			document.getElementById("txtNumbers").value = parseInt(num) - parseInt(num2);
-			ope = '=';
-			break;
-	
-			case "*":
-			console.log(op);
-			document.getElementById("txtNumbers").value = parseInt(num) * parseInt(num2);
-			ope = '=';
-			break;
-	
-			case "/":			
-			console.log(op);
-			document.getElementById("txtNumbers").value = parseInt(num) / parseInt(num2);
-			ope = '=';
-			break;
+			if (val == "c") {
+				document.getElementById("txtNumbers").value = "";
+				return;
 			}
-			num = document.getElementById("txtNumbers").value;
-			num2 = "";			
-			break;
-	}
 
-	}
+			//console.log(val);
+			if (ope == "") {
+
+				num = num + val;
+				document.getElementById("txtNumbers").value = num;
+			}
+			else {
+				num2 = num2 + val;
+				document.getElementById("txtNumbers").value = num2;
+			}
+		}
+
+		function calculate(op) {
+			if (op != "=") {
+				document.getElementById("txtNumbers").value = "";
+				ope = op;
+			}
+			else {
+				switch (ope) {
+					case "+":
+						document.getElementById("txtNumbers").value = Add(parseInt(num) , parseInt(num2));
+						ope = '=';
+						break;
+					case "-":
+						Sub(parseInt(num) , parseInt(num2));						
+						break;
+					case "*":
+						document.getElementById("txtNumbers").value = parseInt(num) * parseInt(num2);
+						ope = '=';
+						break;
+					case "/":
+						document.getElementById("txtNumbers").value = parseInt(num) / parseInt(num2);
+						ope = '=';
+						break;
+				}
+				num = document.getElementById("txtNumbers").value;
+				num2 = "";				
+			}
+		}
+
+		function Add(n1, n2){
+			return n1 + n2;
+		}
+
+		function Sub(n1, n2){
+			document.getElementById("txtNumbers").value = n1 - n2;
+			ope = '=';
+		}
 
 
-</script>
+
+	</script>
 
 </head>
 
@@ -114,150 +97,150 @@
 
 	<p> SIMPLE CALCULATOR </p>
 
-<table width="20%">
+	<table width="20%">
 
-<tr>
-	<td colspan='4'>
-		<input id="txtNumbers" type="textbox">
-	</td>
-</tr>
+		<tr>
+			<td colspan='4'>
+				<input id="txtNumbers" type="textbox">
+			</td>
+		</tr>
 
-<tr>
-							<!--1-->
-	<td>
-		<input id="c" type="button" value="C" onclick="asignnumber('c')">
-	</td>
+		<tr>
+			<!--1-->
+			<td>
+				<input id="c" type="button" value="C" onclick="asignnumber('c')">
+			</td>
 
-							<!--2-->
+			<!--2-->
 
-	<td>
-		<input id="per" type="button" value="%" onclick="asignnumber('%')">
-	</td>
-							<!--3-->
+			<td>
+				<input id="per" type="button" value="%" onclick="asignnumber('%')">
+			</td>
+			<!--3-->
 
-	<td>
-		<input id="can" type="button" value="X" onclick="asignnumber('X')">
-	</td>
+			<td>
+				<input id="can" type="button" value="X" onclick="asignnumber('X')">
+			</td>
 
-							<!--4-->
-	<td>
-		<input id="divd" type="button" value="/" onclick="calculate('/')">
-	</td>
-</tr>
+			<!--4-->
+			<td>
+				<input id="divd" type="button" value="/" onclick="calculate('/')">
+			</td>
+		</tr>
 
-<tr>
-							<!--5-->
+		<tr>
+			<!--5-->
 
-	<td>
-		<input id="sev" type="button" value="7" onclick="asignnumber('7')">
-	</td>
+			<td>
+				<input id="sev" type="button" value="7" onclick="asignnumber('7')">
+			</td>
 
-							<!--6-->
-
-
-	<td>
-		<input id="eight" type="button" value="8" onclick="asignnumber('8')">
-	</td>
-
-							<!--7-->
+			<!--6-->
 
 
+			<td>
+				<input id="eight" type="button" value="8" onclick="asignnumber('8')">
+			</td>
 
-	<td>
-		<input id="nine" type="button" value="9" onclick="asignnumber('9')">
-	</td>
-
-							<!--8-->
-
-
-	<td>
-		<input id="multi" type="button" value="*" onclick="calculate('*')">
-	</td>
-</tr>
-<tr>
-
-							<!--9-->
+			<!--7-->
 
 
-	<td>
-		<input id="four" type="button" value="4" onclick="asignnumber('4')">
-	</td>
 
-							<!--10-->
+			<td>
+				<input id="nine" type="button" value="9" onclick="asignnumber('9')">
+			</td>
 
-
-	<td>
-		<input id="five" type="button" value="5" onclick="asignnumber('5')">
-	</td>
+			<!--8-->
 
 
-							<!--11-->
+			<td>
+				<input id="multi" type="button" value="*" onclick="calculate('*')">
+			</td>
+		</tr>
+		<tr>
 
-	<td>
-		<input id="six" type="button" value="6" onclick="asignnumber('6')">
-	</td>
-
-							<!--12-->
-
-	<td>
-		<input id="sub" type="button" value="-" onclick="calculate('-')">
-	</td>
-
-</tr>
-<tr>
-							<!--13-->
-
-	<td>
-		<input id="one" type="button" value="1" onclick="asignnumber('1')">
-	</td>
-
-							<!--14-->
-
-	<td>
-		<input id="two" type="button" value="2" onclick="asignnumber('2')">
-	</td>
-
-							<!--15-->
+			<!--9-->
 
 
-	<td>
-		<input id="three" type="button" value="3" onclick="asignnumber('3')">
-	</td>
+			<td>
+				<input id="four" type="button" value="4" onclick="asignnumber('4')">
+			</td>
 
-							<!--16-->
+			<!--10-->
 
-	<td>
-		<input id="add" type="button" value="+" onclick="calculate('+')">
-	</td>
-</tr>
-<tr>
-							<!--17-->
 
-	<td>
-		<input id="null" type="button" value="" onclick="asignnumber('')">
-	</td>
+			<td>
+				<input id="five" type="button" value="5" onclick="asignnumber('5')">
+			</td>
 
-							<!--18-->
 
-	<td>
-		<input id="zero" type="button" value="0" onclick="asignnumber('0')">
-	</td>
+			<!--11-->
 
-							<!--19-->
+			<td>
+				<input id="six" type="button" value="6" onclick="asignnumber('6')">
+			</td>
 
-	<td>
-		<input id="dec" type="button" value="." onclick="asignnumber('.')">
-	</td>
+			<!--12-->
 
-							<!--20-->
+			<td>
+				<input id="sub" type="button" value="-" onclick="calculate('-')">
+			</td>
 
-	<td>
-		<input id="equals" type="button" value="=" onclick="calculate('=')">
-	</td>
+		</tr>
+		<tr>
+			<!--13-->
 
-</tr>
+			<td>
+				<input id="one" type="button" value="1" onclick="asignnumber('1')">
+			</td>
 
-</table>
+			<!--14-->
+
+			<td>
+				<input id="two" type="button" value="2" onclick="asignnumber('2')">
+			</td>
+
+			<!--15-->
+
+
+			<td>
+				<input id="three" type="button" value="3" onclick="asignnumber('3')">
+			</td>
+
+			<!--16-->
+
+			<td>
+				<input id="add" type="button" value="+" onclick="calculate('+')">
+			</td>
+		</tr>
+		<tr>
+			<!--17-->
+
+			<td>
+				<input id="null" type="button" value="" onclick="asignnumber('')">
+			</td>
+
+			<!--18-->
+
+			<td>
+				<input id="zero" type="button" value="0" onclick="asignnumber('0')">
+			</td>
+
+			<!--19-->
+
+			<td>
+				<input id="dec" type="button" value="." onclick="asignnumber('.')">
+			</td>
+
+			<!--20-->
+
+			<td>
+				<input id="equals" type="button" value="=" onclick="calculate('=')">
+			</td>
+
+		</tr>
+
+	</table>
 </body>
 
 

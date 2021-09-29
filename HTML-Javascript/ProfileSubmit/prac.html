@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>form submission</title>
+    
+    <style>
+       table {
+        border: 1px double black;
+        padding:2px;
+        border-spacing:5px;
+        background-color:#f2f2f2;
+        border-radius: 4px;
+        width:55%;
+        }
+        h1 {
+        font-family: "Times New Roman", Times, serif;
+        text-align: center;
+        text-transform: uppercase;
+        }
+        #button {
+            background-color: #888888;
+            color: rgb(255, 255, 255);
+            padding: 10px ;
+        }
+        body {
+            
+        background-image: url("1.jpg");
+        }
+        #center{
+            margin-left: auto;
+            margin-right: auto;
+        }   
+    </style>
+
+    <script language="javascript" type="text/javascript">
+        document.getElementById("reset").value = "";
+
+
+
+
+
+</script>
+</head>
+
+<body>
+    <h1> Student Registration Form</h1>
+    
+    <table  id="center">
+        <tr>
+            <td>
+                <label for="First name">First Name:</label> </br>
+                <input type="text" id="First name" name="First name" required>
+                
+            </td>
+            <td>
+                Last Name: </br>
+                <input id="" type="textbox" Value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Mother Name: </br>
+                <input id="" type="textbox" Value="">
+            </td>
+            <td>
+                Father Name: </br>
+                <input id="" type="textbox" Value="">
+            </td>
+        </tr>
+                        
+       <tr>
+            <td>
+                Gender:
+                <input type="radio" id="Gender" name="Gender" value="Male">
+                <label for="html">Male</label>
+                <input type="radio" id="Gender" name="Gender" value="Female">
+                <label for="html">Female</label>
+            </td>
+        </tr>
+
+         <tr>
+            <td colspan="2">
+                <label for="Address">Address:</label> </br>
+                <input type="text" id="Address" name="Address" required>
+            </td>
+        </tr>
+       
+        <tr>
+            <td>
+                State:</br>
+                <select name="province" id="cars">
+                    <option>Sindh</option>
+                    <option>Punjab</option>
+                    <option>Khyber Pakhtunkhwa</option>
+                    <option>Balochistan</option>
+                  </select>
+            </td>
+            <td>
+                City:</br>
+                <select name="cities" id="cars">
+                    <option>Karachi</option>
+                    <option>Lahore</option>
+                    <option>Multan</option>
+                    <option>Peshawar</option>
+                    <option>Islamabad</option>
+                    <option>Rawalpindi</option>
+                    <option>Quetta</option>
+                    <option>Sukkur</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="dob">DOB:</label></br>
+                <input type="date" id="dob" name="dob">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Hobbies: </br>
+                <input type="checkbox" id="hobby1" name="hobby1" value="Reading">
+                <label for="hobby1"> Reading</label><br>
+                <input type="checkbox" id="hobby2" name="hobby2" value="Painting">
+                <label for="hobby2"> Painting</label><br>
+                <input type="checkbox" id="hobby3" name="hobby3" value="Travelling">
+                <label for="hobby3"> Travelling</label><br><br>
+                <input type="checkbox" id="hobby4" name="hobby4" value="Photography">
+                <label for="hobby4"> Photography</label><br>
+                <input type="checkbox" id="hobby5" name="hobby5" value="Playing sports">
+                <label for="hobby5"> Playing sports</label><br>
+                <input type="checkbox" id="hobby6" name="hobby6" value="Cooking">
+                <label for="hobby6"> Cooking</label><br><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+               E-mail: </br>
+               <input id="" type="textbox" Value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input id="reset" type="button" value="Reset all" onclick="submit()">
+                <input id="submit" type="button" value="Submit" onclick="submit()">
+            </td>
+        </tr>
+    </table>    
+</body>
+</html>

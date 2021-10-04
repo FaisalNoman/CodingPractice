@@ -94,21 +94,14 @@
         <tr>
             <td>
                 province:</br>
-                <select id="ddlProvince">
+                <select id="ddlProvince" onchange="LoadCities(this.value)">
                     <option value="default">Select Province</option>                    
                   </select>
             </td>
             <td>
                 City:</br>
-                <select name="cities" id="cities">
-                    <option>Karachi</option>
-                    <option>Lahore</option>
-                    <option>Multan</option>
-                    <option>Peshawar</option>
-                    <option>Islamabad</option>
-                    <option>Rawalpindi</option>
-                    <option>Quetta</option>
-                    <option>Sukkur</option>
+                <select name="cities" id="ddlCities">
+                    <option value="default">Select City</option>                    
                 </select>
             </td>
         </tr>
@@ -192,18 +185,72 @@
 				return;
 			}
     }
+
+
+    
+
+    var province = [{
+            "id":1,
+            "name":"Sindh"
+        },
+        {
+            "id":2,
+            "name":"Punjab"
+        }
+    ];
+
+    var cities = [        
+        {
+            "id":1,
+            "name":"Karachi",
+            "provinceName":"Sindh"
+        },
+        {
+            "id":2,
+            "name":"Lahore",
+            "provinceName":"Punjab"
+        },
+        {
+            "id":3,
+            "name":"Hayderabad",
+            "provinceName":"Sindh"
+        }
+    ];
+
     function loadProvince(){
 
-        var province = ["Sindh", "Punjab", "KPK", "Balochistan","AJK"];
+        //var province = ["Sindh", "Punjab", "KPK", "Balochistan","AJK"];
+
         ddl = document.getElementById("ddlProvince");
 
         //ddl.clear();
 
         for(var i=0; i < province.length; i++){
             var option = document.createElement("option");
-            option.append(province[i]);        
+            option.append(province[i].name);        
             ddl.insertBefore(option,ddl.lastChild);
         }
+    }
+
+
+    function LoadCities(province){
+
+        ddl = document.getElementById("ddlCities");
+        
+        //Clear all the existing drowdown elements
+        var length = ddl.options.length;
+        for (i = length-1; i >= 0; i--) {
+            ddl.options[i] = null;
+        }
+        
+        for(var i=0; i < cities.length; i++){
+            if(cities[i].provinceName == province){
+                var option = document.createElement("option");            
+                option.append(cities[i].name);        
+                ddl.insertBefore(option,ddl.lastChild);
+            }
+        }
+
     }
     //JSON Objects
     var product1 = {
@@ -246,6 +293,7 @@
     */
     loadProvince();
     LoadProducts();
+    LoadCities(null);
 
 
 </script>

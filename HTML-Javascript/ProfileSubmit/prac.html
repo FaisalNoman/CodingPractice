@@ -47,18 +47,18 @@
             </td>
             <td>
                 Last Name: </br>
-                <input id="" type="textbox" Value="">
+                <input id="lastName" type="textbox" Value="">
             </td>
         </tr>
 
         <tr>
             <td>
                 Mother Name: </br>
-                <input id="" type="textbox" Value="">
+                <input id="motherName" type="textbox" Value="">
             </td>
             <td>
                 Father Name: </br>
-                <input id="" type="textbox" Value="">
+                <input id="fatherName" type="textbox" Value="">
             </td>
         </tr>
                         
@@ -93,14 +93,14 @@
        
         <tr>
             <td>
-                State:</br>
+                province:</br>
                 <select id="ddlProvince">
                     <option value="default">Select Province</option>                    
                   </select>
             </td>
             <td>
                 City:</br>
-                <select name="cities" id="cars">
+                <select name="cities" id="cities">
                     <option>Karachi</option>
                     <option>Lahore</option>
                     <option>Multan</option>
@@ -139,9 +139,19 @@
         </tr>
 
         <tr>
+            <td colspan="=2">
+                Products: </br>
+                <select id="ddlProducts">
+
+                </select>
+                
+            </td>
+        </tr>
+        
+        <tr>
             <td>
                E-mail: </br>
-               <input id="" type="textbox" Value="">
+               <input id="email" type="textbox" Value="">
             </td>
         </tr>
 
@@ -151,22 +161,37 @@
                 <input id="submit" type="button" value="Submit" onclick="submit()">
             </td>
         </tr>
-        <tr>
-            <td colspan="=2">
-                <select id="ddlProducts">
-
-                </select>
-                
-            </td>
-        </tr>
     </table>  
     
     <script language="javascript" type="text/javascript">
 
     function ResetAll(){
         document.getElementById("firstName").value = "";
+        document.getElementById("lastName").value = "";
+        document.getElementById("motherName").value = "";
+        document.getElementById("fatherName").value = "";
+        //document.getElementById("male").value = "";
+        //document.getElementById("female").value = "";
+        //document.getElementById("nic").value = "";
+        //document.getElementById("passport").value = "";
+        document.getElementById("Address").value = "";
+        document.getElementById("ddlProvince").value = "";
+        document.getElementById("cities").value = "";
+        document.getElementById("dob").value = "";
+        document.getElementById("ddlProducts").value = "";
+        document.getElementById("email").value = "";
+    
+        resetGender();
     }
 
+
+    function specifyprovince(){
+        var province = document.getElementById("ddlProvince");
+        if (val == "1") {
+				document.getElementById("cities").value = "";
+				return;
+			}
+    }
     function loadProvince(){
 
         var province = ["Sindh", "Punjab", "KPK", "Balochistan","AJK"];
@@ -205,6 +230,12 @@
         }
          
     }
+
+    function resetGender() {
+      for(var el = document.getElementsByName('grpGender'), i = el.length; i--;)
+        el[i].checked=false;
+    }
+
     /*
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://reqres.in/api/products", true);

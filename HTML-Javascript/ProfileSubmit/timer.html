@@ -1,0 +1,57 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="currentTime"><b>TEST</b></div>
+        <div id="canvas" style="width:800px;height:400px;background-color: aquamarine;">
+            <img id="ball" style="width:20px;height:20px" src="assets/images/ball.png" />
+        </div>
+    </body>
+    <script type="text/javascript">
+        var dv = document.getElementById("currentTime");
+        
+        
+        setInterval(updteTime,1000);
+        setInterval(Move,100);
+        function updteTime(){
+            dv.innerText = Date();
+        }
+
+        var canvas  = document.getElementById("canvas");
+        var ball = document.getElementById("ball");
+
+        var xPos = 0;
+        var yPos = 0;
+        var xStep = 10;
+        var yStep = 10;
+        function Move(){
+            //xPos = xPos + step;
+            
+            cWidth = parseInt(canvas.style.width.replace("px",""));
+            cHeight = parseInt(canvas.style.height.replace("px",""));
+            ballWidth = parseInt(ball.style.width.replace("px",""));
+            ballHeight  = parseInt(ball.style.height.replace("px",""));
+
+            if(xPos > (cWidth + ballWidth))
+            {
+                xStep = xStep * -1;
+            }
+            if(xPos < 0)
+                xStep = xStep * -1;
+            
+
+            if(yPos > (cHeight + ballHeight))
+                yStep = yStep * -1;
+            if(xPos < 0)
+                yStep = yStep * -1;
+            
+
+            xPos = xPos + xStep;
+            yPos = yPos + yStep;
+
+            ball.style.marginLeft = xPos;
+            ball.style.marginTop = yPos;
+        }
+     </script>
+     
+</html>

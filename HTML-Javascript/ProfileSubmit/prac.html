@@ -17,10 +17,11 @@
         text-align: center;
         text-transform: uppercase;
         }
-        #button {
-            background-color: #888888;
+        .button{
+            background-color: #252525;
             color: rgb(255, 255, 255);
             padding: 10px ;
+            border: none;
         }
         body {
             
@@ -41,13 +42,13 @@
     <table  id="center">
         <tr>
             <td>
-                <label for="First name">First Name:</label> </br>
-                <input type="text" id="firstName" name="First name" required>
+                First Name: </br>
+                <input type="text" id="firstName" name="First name">
                 
             </td>
             <td>
                 Last Name: </br>
-                <input id="lastName" type="textbox" Value="">
+                <input id="lastName" type="textbox">
             </td>
         </tr>
 
@@ -150,8 +151,8 @@
 
         <tr>
             <td>
-                <input id="reset" type="button" value="Reset all" onclick="ResetAll()">
-                <input id="submit" type="button" value="Submit" onclick="submit()">
+                <input class="button" id="reset" type="button" value="Reset all" onclick="ResetAll()">
+                <input class="button" id="submit" type="button" value="Submit" onclick="submit()">
             </td>
         </tr>
     </table>  
@@ -196,10 +197,18 @@
         {
             "id":2,
             "name":"Punjab"
-        }
+        },
+        {
+            "id":3,
+            "name":"Balochistan"
+        },
+        {
+            "id":4,
+            "name":"KPK"
+        },
     ];
 
-    var cities = [        
+     var cities = [        
         {
             "id":1,
             "name":"Karachi",
@@ -212,8 +221,43 @@
         },
         {
             "id":3,
-            "name":"Hayderabad",
+            "name":"Hyderabad",
             "provinceName":"Sindh"
+        },
+        {
+            "id":4,
+            "name":"Lahore",
+            "provinceName":"Punjab"
+        },
+        {
+            "id":5,
+            "name":"Quetta",
+            "provinceName":"Balochistan"
+        },
+        {
+            "id":6,
+            "name":"Peshawar",
+            "provinceName":"KPK"
+        },
+        {
+            "id":7,
+            "name":"Islamabad",
+            "provinceName":"Punjab"
+        },
+        {
+            "id":8,
+            "name":"Larkana",
+            "provinceName":"Sindh"
+        },
+        {
+            "id":9,
+            "name":"Sukkur",
+            "provinceName":"Sindh"
+        },
+        {
+            "id":10,
+            "name":"Abbotabad",
+            "provinceName":"KPK"
         }
     ];
 

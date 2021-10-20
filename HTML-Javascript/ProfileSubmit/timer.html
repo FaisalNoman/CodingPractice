@@ -3,7 +3,7 @@
     </head>
     <body>
         <div id="currentTime"><b>TEST</b></div>
-        <div id="canvas" style="width:800px;height:400px;background-color: aquamarine;">
+        <div id="canvas" style="width:800px;height:400px;background-color: aquamarine;" onclick="resetBallPosition(event)">
             <img id="ball" style="width:20px;height:20px" src="assets/images/ball.png" />
         </div>
     </body>
@@ -13,6 +13,7 @@
         
         setInterval(updteTime,1000);
         setInterval(Move,100);
+
         function updteTime(){
             dv.innerText = Date();
         }
@@ -20,19 +21,19 @@
         var canvas  = document.getElementById("canvas");
         var ball = document.getElementById("ball");
 
-        var xPos = 0;
-        var yPos = 0;
+        var cWidth = parseInt(canvas.style.width.replace("px","")); // i.e:  800px => 800
+        var cHeight = parseInt(canvas.style.height.replace("px",""));
+        var xPos = Math.round( Math.random() * cWidth-100) + 20;
+        var yPos = Math.round( Math.random() * cHeight-100) + 20;
+        var ballWidth = parseInt(ball.style.width.replace("px",""));
+        var ballHeight  = parseInt(ball.style.height.replace("px",""));
         var xStep = 10;
         var yStep = 10;
+
         function Move(){
             //xPos = xPos + step;
             
-            cWidth = parseInt(canvas.style.width.replace("px",""));
-            cHeight = parseInt(canvas.style.height.replace("px",""));
-            ballWidth = parseInt(ball.style.width.replace("px",""));
-            ballHeight  = parseInt(ball.style.height.replace("px",""));
-
-            if(xPos > (cWidth + ballWidth))
+            if(xPos > (cWidth - ballWidth))
             {
                 xStep = xStep * -1;
             }
@@ -40,9 +41,9 @@
                 xStep = xStep * -1;
             
 
-            if(yPos > (cHeight + ballHeight))
+            if(yPos > (cHeight - ballHeight))
                 yStep = yStep * -1;
-            if(xPos < 0)
+            if(yPos < 0)
                 yStep = yStep * -1;
             
 
@@ -52,6 +53,16 @@
             ball.style.marginLeft = xPos;
             ball.style.marginTop = yPos;
         }
+
+        function resetBallPosition(event){
+            console.log(event.clientX);
+            console.log(event.clientY);
+            xPos = event.clientX;
+            yPos = event.clientY;
+            
+        }
+
+        //yellowContainer.addEventListener("click", getClickPosition, false);
      </script>
      
 </html>

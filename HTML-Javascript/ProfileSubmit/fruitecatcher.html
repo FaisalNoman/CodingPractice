@@ -1,62 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>fruitcatcher</title>
+    <style>
+        #canvas{
+            width:800px;
+            height:400px; 
+            background-color: rgb(190, 130, 106);
+            margin: 15px;
+            
+        }
+        #basket{
+            width: 80px;
+            height: 70px;
+            /*position:absolute; 
+            bottom: 260px;*/
+            margin: 320px 10px;
+        }
+        .fruits{
+            width: 50px;
+            height: 50px;
+            margin-bottom: 650px;
+        }
+    </style>
+</head>
+<body>
+    <div id="currentTime"><b></b></div>
+    <div id="canvas">
+        <img id="basket" src="assets/images/fc/basket.png" />
+        <img id="apple" class="fruits" src="assets/images/fc/apple.jpg" />
+        <img id="cherry" class="fruits" src="assets/images/fc/cherry.jpg" />
+        <img id="mango" class="fruits" src="assets/images/fc/mango.jpg" />
+        <img id="strawberry" class="fruits" src="assets/images/fc/strawberry.jpg" />
+        <img id="orange" class="fruits" src="assets/images/fc/orange.png" />
+        <img id="pineapple" class="fruits" src="assets/images/fc/pineapple.jpg" />
+        <img id="watermelon" class="fruits" src="assets/images/fc/watermelon.jpg" />
+        <img id="lemon" class="fruits" src="assets/images/fc/lemon.png" />
+    </div>    
+</body>
+
 <script type="text/javascript">
-var fruites = [
+    var dv = document.getElementById("currentTime");
+    
+    setInterval(updteTime,1000);
+    setInterval(Move,100);
+        
+            function updteTime(){
+            dv.innerText = Date();
+        }
+
+        var canvas  = document.getElementById("canvas");
+        var basket = document.getElementById("basket");
+        var apple  = document.getElementById("apple");
+        var cherry = document.getElementById("cherry");
+        var mango  = document.getElementById("mango");
+        var strawberry = document.getElementById("strawberry");
+        var orange  = document.getElementById("orange");
+        var pineapple = document.getElementById("pineapple");
+        var watermelon  = document.getElementById("watermelon");
+        var lemon = document.getElementById("lemon");
+
+        /*var fruits = [
     {
         "id":"1",
-        "image":"fruitecatcher\apple.jpg",
+        "image":"",
         "xPos":"0",
-        "yPos":"0",
+        "yPos":"5",
         "steps":"0"
     },
     {
         "id":"2",
         "image":"fruitecatcher\orange.jpg",
         "xPos":"0",
-        "yPos":"0",
+        "yPos":"5",
         "steps":"0"
     },
     {
         "id":"3",
         "image":"fruitecatcher\apple.jpg",
         "xPos":"0",
-        "yPos":"0",
+        "yPos":"5",
         "steps":"0"
     },
     {
         "id":"3",
-        "image":"fruitecatcher\apple.jpg",
+        "image",
         "xPos":"0",
-        "yPos":"0",
+        "yPos":"5",
         "steps":"0"
     }
-];
+    {
+        "id":"3",
+        "image":"fruitecatcher\apple.jpg",
+        "xPos":"0",
+        "yPos":"5",
+        "steps":"0"
+    },
+    {
+        "id":"3",
+        "image":"fruitecatcher\apple.jpg",
+        "xPos":"0",
+        "yPos":"5",
+        "steps":"0"
+    },
+    {
+        "id":"3",
+        "image":"fruitecatcher\apple.jpg",
+        "xPos":"0",
+        "yPos":"5",
+        "steps":"0"
+    },
+    {
+        "id":"3",
+        "image":"fruitecatcher\apple.jpg",
+        "xPos":"0",
+        "yPos":"5",
+        "steps":"0"
+    },
 
+];*/
 
-//quiz
-//let variable a ,b have different values
-// swap the value of a and b without using third variable
+        var cWidth = parseInt(canvas.style.width.replace("px","")); // i.e:  800px => 800
+        var cHeight = parseInt(canvas.style.height.replace("px",""));
+        var xPos = Math.round( Math.random() * cWidth-100) + 20;
+        var yPos = Math.round( Math.random() * cHeight-100) + 20;
+        var fruitsWidth = parseInt(fruits.style.width.replace("px",""));
+        var fruitsHeight  = parseInt(fruits.style.height.replace("px",""));
+        var xStep = 10;
+        var yStep = 10;
 
-var a = 10;
-var b = 20;
+        function Move(){
+            //xPos = xPos + step;
+            
+            if(xPos > (cWidth - fruitsWidth))
+            {
+                xStep = xStep * -1;
+            }
+            if(xPos < 0)
+                xStep = xStep * -1;
+            
 
-//First method - Use third variable c
-/*
-var c = a; // 10
-a = b; // 20
-b = c; // 10
-*/
+            if(yPos > (cHeight - fruitsHeight))
+                yStep = yStep * -1;
+            if(yPos < 0)
+                yStep = yStep * -1;
+            
 
-//Second Method 
+            xPos = xPos + xStep;
+            yPos = yPos + yStep;
 
-a = a + b; //30
-b = a - b; // 30 - 20 = 10
-a = a - b; // 30 - 10 = 20
+            fruits.style.marginLeft = xPos;
+            fruits.style.marginTop = yPos;
+        }
 
-consol.log(a); // 20
-consol.log(b); // 10
-
-//Next task would be sorting.
-
-var numbers = [5,2,8,1,10,6,7,2];
-// [1,2,2,5,6,7,8,10]
+        function resetBallPosition(event){
+            console.log(event.clientX);
+            console.log(event.clientY);
+            xPos = event.clientX;
+            yPos = event.clientY;
+            
+        }
 
 </script>
+</html>
+

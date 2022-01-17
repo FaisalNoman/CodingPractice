@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{FBE0AF14-949C-4D80-AEF5-A6303DCEF780}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CcharpConsoleApp", "ConsoleApplication1\CcharpConsoleApp.csproj", "{FBE0AF14-949C-4D80-AEF5-A6303DCEF780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

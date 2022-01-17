@@ -19,6 +19,7 @@ class Program
             Console.WriteLine("Ok");
 
         Car toyota = new Car();
+
         toyota.make = "Toyota";
         toyota.model = "2021";
         toyota.speed = 0;
@@ -27,17 +28,26 @@ class Program
         toyota.Brake();
         toyota.CurrentSpeed();
         Console.ReadLine();
+        Car honda = new Car();
+        
+
+
     }
 }
 
 public class Car {
-
+    //Encapsulation achived through Access modifiers
+    //Access Modifiers types in C# : Public , Protected , Private , Friendly
     public string model;
     public string make;
     public int speed = 0;
+    protected string RegistrationNo;
+    private string ChasisNo;
 
     public void Accelerate()
     {
+        ChasisNo = "12345";
+        RegistrationNo = "343434";
         Console.WriteLine(speed);
         speed++;
     }

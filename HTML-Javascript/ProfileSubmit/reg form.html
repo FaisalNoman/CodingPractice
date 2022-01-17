@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>form submission</title>
+    
+    <style>
+       table {
+        border: 1px double black;
+        padding:2px;
+        border-spacing:5px;
+        background-color:#f2f2f2;
+        border-radius: 4px;
+        width:55%;
+        }
+        h1 {
+        font-family: "Times New Roman", Times, serif;
+        text-align: center;
+        text-transform: uppercase;
+        }
+        .button{
+            background-color: #252525;
+            color: rgb(255, 255, 255);
+            padding: 10px ;
+            border: none;
+        }
+        body {
+            
+        background-image: url("1.jpg");
+        }
+        #center{
+            margin-left: auto;
+            margin-right: auto;
+        }   
+    </style>
+
+    
+</head>
+
+<body>
+    <h1> Student Registration Form</h1>
+    
+    <table  id="center">
+        <tr>
+            <td>
+                First Name: </br>
+                <input type="text" id="firstName" name="First name">
+                
+            </td>
+            <td>
+                Last Name: </br>
+                <input id="lastName" type="textbox">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Mother Name: </br>
+                <input id="motherName" type="textbox" Value="">
+            </td>
+            <td>
+                Father Name: </br>
+                <input id="fatherName" type="textbox" Value="">
+            </td>
+        </tr>
+                        
+       <tr>
+            <td colspan="2">
+                Gender:
+                <fieldset id="grpGender">
+                    <input type="radio" id="Gender"  value="Male" name="grpGender">
+                    <label for="html">Male</label>
+                    <input type="radio" id="Gender"  value="Female" name="grpGender">
+                    <label for="html">Female</label>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Identity Document:
+            <fieldset id="grpIdentity">
+                <input type="radio" id="nic" value="NIC" name="grpIdentity">
+                <label for="html">NIC</label>
+                <input type="radio" id="passport"  value="Passport" name="grpIdentity">
+                <label for="html">Passport</label>
+            </fieldset>
+            </td>
+        </tr>
+         <tr>
+            <td colspan="2">
+                <label for="Address">Address:</label> </br>
+                <input type="text" id="Address" name="Address" required>
+            </td>
+        </tr>
+       
+        <tr>
+            <td>
+                province:</br>
+                <select id="ddlProvince" onchange="LoadCities(this.value)">
+                    <option value="default">Select Province</option>                    
+                  </select>
+            </td>
+            <td>
+                City:</br>
+                <select name="cities" id="ddlCities">
+                    <option value="default">Select City</option>                    
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="dob">DOB:</label></br>
+                <input type="date" id="dob">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Hobbies: </br>
+                <input type="checkbox" id="hobby1" value="Reading">
+                <label for="hobby1"> Reading</label><br>
+                <input type="checkbox" id="hobby2" value="Painting">
+                <label for="hobby2"> Painting</label><br>
+                <input type="checkbox" id="hobby3" value="Travelling">
+                <label for="hobby3"> Travelling</label><br><br>
+                <input type="checkbox" id="hobby4" value="Photography">
+                <label for="hobby4"> Photography</label><br>
+                <input type="checkbox" id="hobby5" value="Playing sports">
+                <label for="hobby5"> Playing sports</label><br>
+                <input type="checkbox" id="hobby6" value="Cooking">
+                <label for="hobby6"> Cooking</label><br><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="=2">
+                Products: </br>
+                <select id="ddlProducts">
+
+                </select>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+               E-mail: </br>
+               <input id="email" type="textbox" Value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input class="button" id="reset" type="button" value="Reset all" onclick="ResetAll()">
+                <input class="button" id="submit" type="button" value="Submit" onclick="submit()">
+            </td>
+        </tr>
+    </table>  
+    
+    <script language="javascript" type="text/javascript" src="assets/scripts/prac.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\bin\Debug\netcoreapp2.2\OOPPractice.deps.json
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\bin\Debug\netcoreapp2.2\OOPPractice.runtimeconfig.json
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\bin\Debug\netcoreapp2.2\OOPPractice.runtimeconfig.dev.json
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\bin\Debug\netcoreapp2.2\OOPPractice.dll
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\bin\Debug\netcoreapp2.2\OOPPractice.pdb
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\obj\Debug\netcoreapp2.2\OOPPractice.csprojAssemblyReference.cache
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\obj\Debug\netcoreapp2.2\OOPPractice.csproj.CoreCompileInputs.cache
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\obj\Debug\netcoreapp2.2\OOPPractice.AssemblyInfoInputs.cache
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\obj\Debug\netcoreapp2.2\OOPPractice.AssemblyInfo.cs
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\obj\Debug\netcoreapp2.2\OOPPractice.dll
+C:\Users\faisalk\kuassignment\CodingPractice\C#\OOPPractice\obj\Debug\netcoreapp2.2\OOPPractice.pdb

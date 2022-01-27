@@ -1,0 +1,7 @@
+C:\Users\faisalk\kuassignment\CodingPractice\C#\CcharpConsoleApp\CsharpConsoleApp\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\faisalk\kuassignment\CodingPractice\C#\CcharpConsoleApp\CsharpConsoleApp\bin\Debug\ConsoleApplication1.exe
+C:\Users\faisalk\kuassignment\CodingPractice\C#\CcharpConsoleApp\CsharpConsoleApp\bin\Debug\ConsoleApplication1.pdb
+C:\Users\faisalk\kuassignment\CodingPractice\C#\CcharpConsoleApp\CsharpConsoleApp\obj\Debug\CsharpConsoleApp.csprojAssemblyReference.cache
+C:\Users\faisalk\kuassignment\CodingPractice\C#\CcharpConsoleApp\CsharpConsoleApp\obj\Debug\CsharpConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\faisalk\kuassignment\CodingPractice\C#\CcharpConsoleApp\CsharpConsoleApp\obj\Debug\ConsoleApplication1.exe
+C:\Users\faisalk\kuassignment\CodingPractice\C#\CcharpConsoleApp\CsharpConsoleApp\obj\Debug\ConsoleApplication1.pdb

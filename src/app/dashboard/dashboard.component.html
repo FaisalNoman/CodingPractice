@@ -1,0 +1,49 @@
+<!-- <div class="dashboardBg">
+    <div class="centered-container animated flipInX">
+        <table>
+            <div >
+                <tr>
+                    <td>
+                        <button (click)="navigateToAdminPage()" *ngIf="isInitialized" class="button-block">Admin</button>
+                    </td>
+                    <td class="separator"></td>
+                    <td>
+                        <button (click)="navigateToUserPage()" class="button-block">User</button>
+                    </td>
+                </tr>
+        </div>  
+        </table>
+    </div>
+</div>
+ -->
+
+ <div class="dashboardBg">
+    <div class="centered-container animated flipInX">
+            <div *ngIf="isInitialized" class="td">
+                <table>
+                <tr>
+                    <td>
+                        <button (click)="navigateToAdminPage()" class="button-block">Admin</button>
+                    </td>
+                    <td class="separator"></td>
+                    <td>
+                        <button (click)="navigateToUserPage()" class="button-block">User</button>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            
+            <div *ngIf="isInitialized ==false">
+            <table>
+                <tr>
+                    <td class="centered-container animated flipInX">
+                        <button (click)="navigateToUserPage()" class="button-block">User</button>
+                    </td>
+                </tr>
+            </table>
+        </div>  
+        
+    </div>
+</div>
+
+

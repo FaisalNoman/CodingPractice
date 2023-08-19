@@ -1,0 +1,34 @@
+<div>
+    <div class="userBg">
+      <div class="login-container">
+        <div class="centered-container">
+          <div>
+           <h2>User Data Table</h2>
+            <div>
+                <input type="text" [(ngModel)]="searchText" (input)="applyFilter()" placeholder="Search by Username" class="search-input">
+              </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th>Role Id</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of pagedData">
+                  <td>{{ user.username }}</td>
+                  <td>{{ user.userPassword }}</td>
+                  <td>{{ user.userRoleId }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator [pageSize]="pageSize" [pageIndex]="currentPage" [length]="totalRecords" (page)="pageChanged($event)">
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

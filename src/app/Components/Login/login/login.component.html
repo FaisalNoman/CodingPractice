@@ -1,0 +1,33 @@
+
+<div class="login-container">
+<div class="centered-container animated flipInX">
+  
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="LoginForm!" width="50%">
+
+    <div class="centered-form">
+       <a target="_blank" href="https://tplinsurance.com/">                   
+         <img class="img-responsive" src="assets\logo-default.png" alt="TPL Insurance" />  
+       <br>             
+      </a> 
+
+      <label class="form-lable" hidden>Id</label>
+      <input type="text" class="form-control" hidden />
+
+      <input type="text" class="form-control" formControlName="Username" placeholder="Username" maxlength="30" required/>
+      <span class="text-danger" *ngIf="LoginForm.get('Username')?.invalid && LoginForm.get('Username')?.touched">Invalid Username</span><br />
+      
+      <input type="password" class="form-control" formControlName="Password" placeholder="Password"/><br />
+      <span class="text-danger" *ngIf="LoginForm.get('Password')?.invalid && LoginForm.get('Password')?.touched">Invalid Password</span><br />
+      
+      <button type="submit" class="button-block" > Login </button>
+
+    </div>
+  </form>
+  
+</div>
+</div>
+
+
+
+<router-outlet></router-outlet>
